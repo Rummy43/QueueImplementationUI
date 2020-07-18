@@ -1,0 +1,10 @@
+
+<mat-dialog-content>
+  <textarea id="messageId" #messageText>
+  </textarea>
+  <input type="hidden" id="queueId" value="{{qid}}" #queueIdMessage/>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+<button class="mat-raised-button mat-primary"(click)="add(queueIdMessage.value,messageText.value)">Add</button>
+</mat-dialog-actions>

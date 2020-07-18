@@ -1,0 +1,26 @@
+<mat-dialog-content>
+ <h1>Messages....</h1>
+
+ <table class="table table-striped table-bordered table-hover">
+    <thead >
+      <th>Description</th>
+    </thead>
+    <tbody>
+        
+            <div *ngIf="messages?.length; else templateName">
+                    <tr *ngFor="let m of messages">
+                            <td>{{m}}</td>
+                    </tr>
+            </div>
+                
+            <ng-template #templateName>
+                   <tr><td><font color="red">There are no messages in this Queue...</font></td></tr>
+            </ng-template>
+    </tbody>
+  </table>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button mat-primary"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions>
